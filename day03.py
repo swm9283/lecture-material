@@ -1,63 +1,22 @@
-#prime number
-#while문 사용 version 1
-number = int(input(" input number : "))
-counts = 0
-k = 1
-while k <= number:
-    if number % k == 0:
-        counts = counts + 1
-    k = k + 1
-if counts == 2:
-    print(f"{number} is prime number")
-else:
-    print(f"{number} is not prime number")
+# #input 2 numbers
+# # 두 수 사이의 소수만 출력하게끔 해주세요.
 
-#for문사용 version2
-number = int(input(" input number : "))
-counts = 0
-for i in range(1,number+1):
-    if number % i ==0:
-        counts = counts +1
-if counts == 2:
-    print(f"{number} is prime number")
-else:
-    print(f"{number} is not prime number")
+start = int(input("start and end number : "))
+end = int(input("start and end number : "))
+if end < start:
+    start, end = end, start
 
-#for문사용 version3, 반복을 조금이라도 줄임
-number = int(input(" input number : "))
-counts = 0
-for i in range(2,number):
-    if number % i ==0:
-        counts = counts +1
-if counts:
-    print(f"{number} is not prime number")
+for k in range(start,end+1):
+    if k <= 1:
+        continue
+    for i in range(2, k):
+        if k % i == 0:
+            break
+    else:
+        print(k, end=" ")
 
-else:
-    print(f"{number} is prime number")
 
-#version4 bool type을 사용!
-number = int(input(" input number : "))
-is_prime = True
-for i in range(2, number):
-    if number % i == 0:
-        is_prime = False
-#    print(i)
-if is_prime:
-    print(f"{number} is prime number")
 
-else:
-    print(f"{number} is not prime number")
 
-#version6 bool tpye에 break 추가 엄청난 성능발전!
-number = int(input(" input number : "))
-is_prime = True
-for i in range(2, number):
-    if number % i == 0:
-        is_prime = False
-        break
-#    print(i)
-if is_prime:
-    print(f"{number} is prime number")
 
-else:
-    print(f"{number} is not prime number")
+
