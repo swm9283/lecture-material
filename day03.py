@@ -95,15 +95,32 @@ print(setup.capitalize())
 #old modern ultra modern
 #예전 포맷들도 알아야한다.
 
+
+#연습문제 1.
+#풀이1.
 song="""When an eel grabs your arm,
 and it causes great harm,
-That's -  a moray"""
+That's -  a moray!"""
 print(song.rfind("m"))
 index = song.rfind("m")
 song_upper = song[index].upper()
 print(index)
 song_after = song[:index] + song_upper + song[index+1:]
 print(song_after)
+#풀이2.
+song_list = song.split()
+print(song_list)
+if "moray" in song_list:
+       song_list[-1] = song_list[-1].title()
+print(song_list)
+song_join=" ".join(song_list)
+print(song_join)
+
+#연습문제 2.
+#f" " 를 사용하면 된다.
+
+#연습문제 3.
+poem = print("My kitty cat likes%s,\nMy kitty cat likes%s,\nMy kitty cat fell on his %s")
 
 
 
