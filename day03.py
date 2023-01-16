@@ -1,102 +1,63 @@
-while True:
-    gugudane = int(input("원하는 수의 구구단을 입력하세요,0을 입력시 프로그램이 종료됩니다., 예)3 :"))
-    count = 1
-    if gugudane == 0:
-        print("프로그램이 종료되었습니다")
-        break
-    # if gugudane>0 and gugudane<10: old style
-    if 1 <= gugudane < 10:
-        while count <= 9:
-            print("{0} * {1} = {2}".format(gugudane, count, gugudane * count))
-            count = count + 1
-
-
-    else:
-        print("1에서 9사이의 값을 입력하세요!")
-
-
-numbers = [1,3,5]
-position = 0
-while position <len(numbers):
-    number =numbers[position]
-    if number % 2 ==0:
-        print("found even number",number)
-        break
-    position = position +1
+#prime number
+#while문 사용 version 1
+number = int(input(" input number : "))
+counts = 0
+k = 1
+while k <= number:
+    if number % k == 0:
+        counts = counts + 1
+    k = k + 1
+if counts == 2:
+    print(f"{number} is prime number")
 else:
-    print("No even number found")
+    print(f"{number} is not prime number")
 
+#for문사용 version2
+number = int(input(" input number : "))
+counts = 0
+for i in range(1,number+1):
+    if number % i ==0:
+        counts = counts +1
+if counts == 2:
+    print(f"{number} is prime number")
+else:
+    print(f"{number} is not prime number")
 
-#for문 사용
-while True:
-    gugudane = int(input("원하는 수의 구구단을 입력하세요,0을 입력시 프로그램이 종료됩니다., 예)3 :"))
-    if gugudane == 0:
-        print("프로그램이 종료되었습니다")
+#for문사용 version3, 반복을 조금이라도 줄임
+number = int(input(" input number : "))
+counts = 0
+for i in range(2,number):
+    if number % i ==0:
+        counts = counts +1
+if counts:
+    print(f"{number} is not prime number")
+
+else:
+    print(f"{number} is prime number")
+
+#version4 bool type을 사용!
+number = int(input(" input number : "))
+is_prime = True
+for i in range(2, number):
+    if number % i == 0:
+        is_prime = False
+#    print(i)
+if is_prime:
+    print(f"{number} is prime number")
+
+else:
+    print(f"{number} is not prime number")
+
+#version6 bool tpye에 break 추가 엄청난 성능발전!
+number = int(input(" input number : "))
+is_prime = True
+for i in range(2, number):
+    if number % i == 0:
+        is_prime = False
         break
-    # if gugudane>0 and gugudane<10: old style
-    if 1 <= gugudane < 10:
-        for i in range(1,10,2): # 건너뛰기 사용가능
-            print("{0} * {1} = {2}".format(gugudane,i, gugudane * i))
-    else:
-        print("1에서 9사이의 값을 입력하세요!")
+#    print(i)
+if is_prime:
+    print(f"{number} is prime number")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+else:
+    print(f"{number} is not prime number")
