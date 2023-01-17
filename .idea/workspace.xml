@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4fb36737-1e3e-4010-83e3-4056b8faa7e7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/day01.py" beforeDir="false" afterPath="$PROJECT_DIR$/day01.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dat01_02_countdown.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/day01_01_temperature.py" beforeDir="false" afterPath="$PROJECT_DIR$/day01_01_temperature.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day01_03_dictionary.py" beforeDir="false" afterPath="$PROJECT_DIR$/day01_03_dictionary.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day02.py" beforeDir="false" afterPath="$PROJECT_DIR$/day02.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day03.py" beforeDir="false" afterPath="$PROJECT_DIR$/day03.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mission/day03_mission.py" beforeDir="false" afterPath="$PROJECT_DIR$/mission/day03_mission.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +33,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2KClKXWkd4ZnGNyFDSagyq6Ilou" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
