@@ -1,119 +1,75 @@
-#  list
-# scores = ("A+","B+","C+")
-# print(scores[0])
-# # scores[1] = " B+" : 튜플은 immutable]
+#list
+#copy
+primes = [2,19,3.0,5,7,11]
+primes_cp=primes
+print(primes)
+print(primes_cp)
+primes[-1] = "lunch time"
+print(primes)
+print(primes_cp)
+primes_cp[0] = "morning coffe"
+print(primes)
+print(primes_cp)
+
+#얕은 카피
+#같은 사물함을 사용하기 때문에 일어나는 문제이다.
+#참조의 형태일 경우 이 방식 주로 사용한다.
+# .copy() method list() 변환함수 슬라이스 [:]
+prac = [1,2,[3,2]]
+prac_copy = prac.copy()
+prac_list = list(prac)
+prac_slice = prac[:]
+print(prac,prac_copy,prac_list,prac_slice)
+prac[2][0] = 1
+print(prac,prac_copy,prac_list,prac_slice)
+
+
+
+#딥카피
+#명확하게 별도의 사본이 필요할 경우
 #
-# #  일시적으로 list로 변환
-# temp = list(scores)
-# temp[0] = "B+"
-# temp[1] = "A+"
-# #  다시 튜플로 변환
-# scores = tuple(temp)
-# print(scores[0])
-# print(scores[1])
-# print(scores)
-#
-#
-# #문자열 분할로 생성하기 : split()
+import copy
+a = [1,2,[5,-9]]
+b=copy.deepcopy(a) #별도의 메모리 공간을 받은 것이다.
+a[2][1] = 7 #mutable, but deepcopy b is not affected
+print(a,b)
 
-big_bang = ["GD","태양","탑","대성","승리"]
-exo = ["백현","첸"]
-#  big_bang.append("인하") #뒤에 삽입
-big_bang.insert(1,"인하") #원하는 위치에 삽입
-#  exo.extend(big_bang)
-#  exo = exo + big_bang
-exo.append(big_bang) # 리스트 안에 리스트를 넣었다.
-print(exo)
-print(exo[-1][-4]) #역방향 태양
-print(exo[2][2]) #태양
 
-exo[-2] = "시우민" #리스트는 mutable
-print(exo)
 
-#삭제하기
-# print(exo.pop()) # 빅뱅 pop
-print(exo[2].pop()) # 승리 pop
-print(exo[2].pop(-2)) # 탑 pop
-del exo[2][-1] # 대성 delete
-# exo[2].remove("인하") not in exo
-exo[2].remove("인하")
 
-exo.clear()
-print(exo) #unit 활동 종료
 
-#원하는 값 찾기 : .index("값")
 
-#존재 여부 확인하기 : in
 
-#값 세기 : count()
 
-#문자열로 변환하기 : join()
 
-#정렬하기
-# .sort() :원본을 바꿀 때
-# sorted() :복사본을 만들 때
 
 
+#  sort
 
+#  TypeError: '<' not supported between instances of 'str' and 'int'
+mixed = [6,4,5,"A",7,"트와이스","B","마마무"]
+mixed.sort()
+print(mixed)
 
 
 
+#문자형일 때 숫자 영어(대문자, 소문자) 한글 : 사전 순으로 정렬된다.
+mixed = ["6","4","5","A","7","트와이스","B","마마무","b"]
+# mixed.sort()
+mixed.sort(reverse=True) #  역순
+print(mixed)
 
 
 
 
+# primes = [2,19,3.0,5,7,11]
+# print(primes)
+# primes.sort()
+# print(primes)
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# primes_sorted = sorted(primes)
+# print(primes)
+# print(primes_sorted)
