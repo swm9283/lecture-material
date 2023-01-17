@@ -21,6 +21,7 @@ prac_list = list(prac)
 prac_slice = prac[:]
 print(prac,prac_copy,prac_list,prac_slice)
 prac[2][0] = 1
+prac[1] = -77 #immutable type이므로 영향을 받지 않는다.
 print(prac,prac_copy,prac_list,prac_slice)
 
 
@@ -33,6 +34,7 @@ a = [1,2,[5,-9]]
 b=copy.deepcopy(a) #별도의 메모리 공간을 받은 것이다.
 a[2][1] = 7 #mutable, but deepcopy b is not affected
 print(a,b)
+
 
 
 
