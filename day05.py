@@ -1,52 +1,23 @@
-#function
+#functioin
+#closure nolocal local variable에 대한 공부!
+#closure 매우 중요한 개념이다. 여러번 봐보자
+def calculate():
+    x = 1
+    y = 2
+    temp = 0
 
-def inha():
-    """
-    숫자출력
-    :return:
-    """
-    print(60)
+    def add_sub(n):
+        # nonlocal x #nonlcal을 사용하면 지역변수를 변경할 수 있다.
+        nonlocal temp #calculate 내의 temp와 add_sub의 temp가 같다.
+        # x = 11 # local variable
+        temp = temp + x + n - y  # add_sub가 x,y를 기억하고 있다.
+        return temp
+    print("once")
+    return add_sub #합수 이름이 return값.
 
+c1 = calculate()
 
-def call_func(f):
-    """
-    매개변수로 함수를 넘겨받아 실행
-    :param f:  매개변수가 함수
-    :return:
-    """
-    f() #넘겨 받은 함수 실행
-
-call_func(inha)
-print(type(call_func))
-
-def subtract(n1,n2):
-    print(n1-n2)
-
-
-def run_fucntion(func,arg1,arg2):
-    """
-    함수를 매개변수로 받아 함수 안에서 해당함수를 실행
-    :param func: 첫번째 인수는 함수
-    :param arg1: 정수 값
-    :param arg2: 정수 값
-    :return:
-    """
-    func(arg1,arg2) #넘겨 받은 함수 실행, arg1과 arg2는 넘겨 받은 함수의 인수로 들어가게된다.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+for i in range(5):
+    print(c1(i)) # add_sub에 i를 넣은 것과 같다. calculate는 한 번 돌아가는데 그 와중에 add_sub가 5번 돌아가네
+print(type(c1))
+print(c1)
