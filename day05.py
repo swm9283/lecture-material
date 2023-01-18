@@ -1,31 +1,37 @@
-#function
-def do_nothing():
-    pass
+# set
+# set의 특성 : 1. 순서 X 2.mutable 3.중복 X
+empty_set = set()
+# print(empty_set)
+even_number = {0,2,4,6,8}
+odd_number = {1,3,5,7,9}
+print(even_number,odd_number)
+print(type(even_number),type(odd_number))
 
-# #None
-#
-# # print(do_nothing())
-#
-# mamamoo = ["화사","솔라","휘인","문별"]
-# # print(mamamoo.pop()) #삭제할 값 리턴 후 삭제. 문별 pop
-# print(mamamoo.remove("문별")) # 삭제만 함. 따라서 print 함수해서 출력할 값이 없다.
-# print(mamamoo)
+letter_list = list("letters")
+letter_list_to_set = set(letter_list)
 
-#매표소 요금 계산 for *
-# *args 가변적인 인수를 받을 때 용이하다. 즉 던져진 인수의 값을 예측할 수 없을 때 용이하다. 튜플로 묶어서 처리한다.
-# 튜플로 받기 때문에 가능하다.
-def calculate_fee(*args):
-    """
-    놀이공원 요금 계산 프로그림
-    :param args: ages
-    :return: total fee for paying
-    """
-    total = 0
-    for age in args:
-        if age >= 19:
-            total =  total + 10000
-        else:
-            total = total + 3000
-    return total
+letter_dict= {"letters": "letters"}
+letter_dict_to_set = set(letter_dict)
+print(letter_dict, letter_dict_to_set)
 
-print(calculate_fee(45,43,10,7))
+letter_tuple = "l","e","t","t","e","r"
+letter_tuple_to_set = set(letter_tuple) #셋은 중복된 값을 삭제하여 셋을 생성
+print(letter_tuple,letter_tuple_to_set)
+
+
+#set mutable
+s = set((1,2,3))
+print(s)
+s.add(4)
+print(s)
+
+s.remove(1)
+print(s)
+
+#in
+
+#콤피네이션 연산자
+
+# 셋 컴프리헨션
+
+# 자료구조 결합하기 + 정리
