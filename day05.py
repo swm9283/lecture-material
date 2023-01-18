@@ -1,4 +1,6 @@
-#functioin
+#function
+#함수를 인수로 받아서 매개변수로 던질 수 있다.
+#함수 안에 함수를 또 정의할 수 있다.(inner function)
 #closure nolocal local variable에 대한 공부!
 #closure 매우 중요한 개념이다. 여러번 봐보자
 def calculate():
