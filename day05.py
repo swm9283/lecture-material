@@ -1,37 +1,64 @@
-# set
-# set의 특성 : 1. 순서 X 2.mutable 3.중복 X
-empty_set = set()
-# print(empty_set)
-even_number = {0,2,4,6,8}
-odd_number = {1,3,5,7,9}
-print(even_number,odd_number)
-print(type(even_number),type(odd_number))
+# def calculate_fee(*args):
+# v0.2
+import random
 
-letter_list = list("letters")
-letter_list_to_set = set(letter_list)
+# def calculate_fee(*args):
 
-letter_dict= {"letters": "letters"}
-letter_dict_to_set = set(letter_dict)
-print(letter_dict, letter_dict_to_set)
+# def calculate_fee(args) -> list:
+#     """
+#     놀이공원 요금 계산 프로그램
+#     :param args: ages
+#     :return: 지불할 총 입장료
+#     :param args: ages in list
+#     :return: [전체 인원 수, 어른 수, 아이 수, 지불할 총 입장료]
+#     """
+#     total = 0
+#     adults = 0
+#     kids = 0
+#     for age in args:
+#         if 19 <= age:  # adult
+#             total = total + 10000
+#             adults = adults + 1
+#         else:
+#             total = total + 3000
+#             kids = kids + 1
+#     return [len(args), adults, kids, total]
+#
+#
+# no_of_visitor = int(input('몇 분 이세요? '))
+# ages = [random.randint(1, 60) for age in range(no_of_visitor)]
+# results = calculate_fee(ages)
+# print(f'{results[0]}명 방문 하셨고 어른 {results[1]}명, 아이 {results[2]}명 총 요금은 {results[-1]}원 입니다')
 
-letter_tuple = "l","e","t","t","e","r"
-letter_tuple_to_set = set(letter_tuple) #셋은 중복된 값을 삭제하여 셋을 생성
-print(letter_tuple,letter_tuple_to_set)
+
+# 이 코드 딕셔너리로 바꾸어보자!!!
+def calculate_fee(args) -> dict: #리턴을 리스트로 하겠다.
+    """
+    놀이공원 요금 계산 프로그램
+    :param args: ages
+    :return: 지불할 총 입장료
+    :param args: ages in list
+    :return: {"no_of_people": 총 인원
+    """
+    total = 0
+    adults = 0
+    kids = 0
+    for age in args:
+        if 19 <= age:  # adult
+            total = total + 10000
+            adults = adults + 1
+        else:
+            total = total + 3000
+            kids = kids + 1
+    return [len(args), adults, kids, total] #여기만 딕셔너리로 바꾸면된다.
 
 
-#set mutable
-s = set((1,2,3))
-print(s)
-s.add(4)
-print(s)
+no_of_visitor = int(input('몇 분 이세요? '))
+ages = [random.randint(1, 60) for age in range(no_of_visitor)]
+results = calculate_fee(ages)
+print(f'{results[0]}명 방문 하셨고 어른 {results[1]}명, 아이 {results[2]}명 총 요금은 {results[-1]}원 입니다')
 
-s.remove(1)
-print(s)
 
-#in
 
-#콤피네이션 연산자
 
-# 셋 컴프리헨션
 
-# 자료구조 결합하기 + 정리
