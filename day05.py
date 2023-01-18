@@ -52,11 +52,16 @@ def calculate_fee(args) -> dict: #리턴을 리스트로 하겠다.
             kids = kids + 1
     return [len(args), adults, kids, total] #여기만 딕셔너리로 바꾸면된다.
 
-
 no_of_visitor = int(input('몇 분 이세요? '))
 ages = [random.randint(1, 60) for age in range(no_of_visitor)]
 results = calculate_fee(ages)
 print(f'{results[0]}명 방문 하셨고 어른 {results[1]}명, 아이 {results[2]}명 총 요금은 {results[-1]}원 입니다')
+
+#독스트링
+# print(calculate_fee.__doc__) #help(calculate_fee)
+# help(calculate_fee)
+# help(len)
+
 
 
 
