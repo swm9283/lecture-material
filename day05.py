@@ -1,66 +1,49 @@
-# def calculate_fee(*args):
-# v0.2
-import random
+#function
 
-# def calculate_fee(*args):
-
-# def calculate_fee(args) -> list:
-#     """
-#     놀이공원 요금 계산 프로그램
-#     :param args: ages
-#     :return: 지불할 총 입장료
-#     :param args: ages in list
-#     :return: [전체 인원 수, 어른 수, 아이 수, 지불할 총 입장료]
-#     """
-#     total = 0
-#     adults = 0
-#     kids = 0
-#     for age in args:
-#         if 19 <= age:  # adult
-#             total = total + 10000
-#             adults = adults + 1
-#         else:
-#             total = total + 3000
-#             kids = kids + 1
-#     return [len(args), adults, kids, total]
-#
-#
-# no_of_visitor = int(input('몇 분 이세요? '))
-# ages = [random.randint(1, 60) for age in range(no_of_visitor)]
-# results = calculate_fee(ages)
-# print(f'{results[0]}명 방문 하셨고 어른 {results[1]}명, 아이 {results[2]}명 총 요금은 {results[-1]}원 입니다')
-
-
-# 이 코드 딕셔너리로 바꾸어보자!!!
-def calculate_fee(args) -> dict: #리턴을 리스트로 하겠다.
+def inha():
     """
-    놀이공원 요금 계산 프로그램
-    :param args: ages
-    :return: 지불할 총 입장료
-    :param args: ages in list
-    :return: {"no_of_people": 총 인원
+    숫자출력
+    :return:
     """
-    total = 0
-    adults = 0
-    kids = 0
-    for age in args:
-        if 19 <= age:  # adult
-            total = total + 10000
-            adults = adults + 1
-        else:
-            total = total + 3000
-            kids = kids + 1
-    return [len(args), adults, kids, total] #여기만 딕셔너리로 바꾸면된다.
+    print(60)
 
-no_of_visitor = int(input('몇 분 이세요? '))
-ages = [random.randint(1, 60) for age in range(no_of_visitor)]
-results = calculate_fee(ages)
-print(f'{results[0]}명 방문 하셨고 어른 {results[1]}명, 아이 {results[2]}명 총 요금은 {results[-1]}원 입니다')
 
-#독스트링
-# print(calculate_fee.__doc__) #help(calculate_fee)
-# help(calculate_fee)
-# help(len)
+def call_func(f):
+    """
+    매개변수로 함수를 넘겨받아 실행
+    :param f:  매개변수가 함수
+    :return:
+    """
+    f() #넘겨 받은 함수 실행
+
+call_func(inha)
+print(type(call_func))
+
+def subtract(n1,n2):
+    print(n1-n2)
+
+
+def run_fucntion(func,arg1,arg2):
+    """
+    함수를 매개변수로 받아 함수 안에서 해당함수를 실행
+    :param func: 첫번째 인수는 함수
+    :param arg1: 정수 값
+    :param arg2: 정수 값
+    :return:
+    """
+    func(arg1,arg2) #넘겨 받은 함수 실행, arg1과 arg2는 넘겨 받은 함수의 인수로 들어가게된다.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
