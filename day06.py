@@ -1,22 +1,17 @@
-# decorator
-#decorator @데코레이터_이름을 사용한 방식
-def document_info(func):
-    def new_function(*args, **kwargs):
-        print("Running function:", func.__name__)
-        print("Positional arguments:", args)
-        print("Keyword arguments:", kwargs)
-        result = func(*args,**kwargs)
-        print("Result:", result)
-        return result
-    return new_function
+# namespace와 scope.
+g = 1 #전역변수
+def print_global():
+    # g = 1 #지역변수  # print_gloabl socpe에 가려져서 보이지 않는다.
+    print(g)
+print_global()
+print(g) # print_gloabl socpe에 가려져서 보이지 않는다.
 
-@document_info
-def sub_int(x,y):
-    return  x - y
+def change_print_global():
+    global g
+    print(g) #global g를 사용안할 시 전역변수 g를 사용할 수 없다.
+    g=2
+    print(g)
+change_print_global()
 
-@document_info
-def squares(n):
-    return n*n
-
-print(sub_int(7,3))
-print(squares(5))
+print(globals())
+print(__name__)
