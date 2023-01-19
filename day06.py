@@ -1,5 +1,5 @@
 # decorator
-#decorator
+#decorator @데코레이터_이름을 사용한 방식
 def document_info(func):
     def new_function(*args, **kwargs):
         print("Running function:", func.__name__)
@@ -10,12 +10,13 @@ def document_info(func):
         return result
     return new_function
 
+@document_info
 def sub_int(x,y):
     return  x - y
 
-print(sub_int(7,3))
+@document_info
+def squares(n):
+    return n*n
 
-#수동방식
-info_sub_int = document_info(sub_int)
-r = info_sub_int(7,3)
-print(r)
+print(sub_int(7,3))
+print(squares(5))
