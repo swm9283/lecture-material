@@ -29,3 +29,8 @@ p1.info()
 p2.info()
 # print(f"{p1.owner}의 포켓몬은 {p1.name}입니다")
 # print(f"{p2.owner}의 포켓몬은 {p2.name}입니다")
+
+class Pikachu(Pokemon): #  inheritance 코드 중복을 방지할 수 있다.......
+    pass
+pi1 = Pikachu("피카츄","덴트","번개")
+pi1.info()
