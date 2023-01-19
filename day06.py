@@ -1,17 +1,29 @@
-# namespace와 scope.
-g = 1 #전역변수
-def print_global():
-    # g = 1 #지역변수  # print_gloabl socpe에 가려져서 보이지 않는다.
-    print(g)
-print_global()
-print(g) # print_gloabl socpe에 가려져서 보이지 않는다.
+# recursion 재귀함수
+def factorial_iter(n):
+    """
+    반복문을 사용한 팩토리얼 함수
+    :param n: n!
+    :return: integer 팩토리얼 게싼 결과 값.
+    """
+    result = 1
+    for k in range(1,n+1):
+        result = result * k
+    return result
+print(factorial_iter(5))
 
-def change_print_global():
-    global g
-    print(g) #global g를 사용안할 시 전역변수 g를 사용할 수 없다.
-    g=2
-    print(g)
-change_print_global()
+def factorial_recu(n):
+    """
+    재귀 함수를 이용한 팩토리얼 함수
+    :param n: n!
+    :return:  자기 자신을 호출 또는 1
+    """
+    if n == 1: # 끝나는 조건
+        return 1
+    else:
+        return factorial_recu(n-1) * n # factorial_recu가 (n-1)!이라는 의미를 내포하고 있다.
 
-print(globals())
-print(__name__)
+print(factorial_iter(1000))
+print(factorial_recu(1000))
+
+
+
