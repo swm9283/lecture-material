@@ -1,5 +1,5 @@
-#pokemon game v0.2
-# 중복코드 제거 , get, set
+#pokemon game v0.3
+# 중복코드 제거 , get, set -> property
 class Pokemon:
     def __init__(self, owner, skills):
         self.hidden_owner = owner
@@ -11,6 +11,8 @@ class Pokemon:
         return self.hidden_owner
     def get_setter(self,owner):
         self.hidden_owner = owner
+
+    owner = property(get_owner,get_setter)
 
 
     def info(self):
@@ -32,7 +34,7 @@ class Pikachu(Pokemon):  # inheritance
         print(f"{self.name}")
 
     def attack(self, idx):  # override
-        print(f'{self.get_owner()}의 {self.name}가 {self.skills[idx]} 공격(전기) 시전!')
+        print(f'{self.owner}의 {self.name}가 {self.skills[idx]} 공격(전기) 시전!')
 
 
 class Ggoboogi(Pokemon):  # inheritance
@@ -42,7 +44,7 @@ class Ggoboogi(Pokemon):  # inheritance
         print(f"{self.name}")
 
     def attack(self, idx):  # override
-        print(f'{self.get_owner()}의 {self.name}가 {self.skills[idx]} 공격(물) 시전!')
+        print(f'{self.owner}의 {self.name}가 {self.skills[idx]} 공격(물) 시전!')
 
     def swim(self):
         print(f'{self.name}가 수영을 합니다')
@@ -55,7 +57,7 @@ class Pairi(Pokemon):  # inheritance
         print(f"{self.name}")
 
     def attack(self, idx):  # override
-        print(f'{self.get_owner()}의 {self.name}가 {self.skills[idx]} 공격(불) 시전!')
+        print(f'{self.owner}의 {self.name}가 {self.skills[idx]} 공격(불) 시전!')
 
 
 while True:
