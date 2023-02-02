@@ -1,4 +1,4 @@
-#pokemon game v0.3
+#pokemon game v0.5
 # 중복코드 제거 , get, set -> property -> decorator
 #__hiddenfield
 class Pokemon:
