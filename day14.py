@@ -1,18 +1,26 @@
 #pokemon game v0.3
-# 중복코드 제거 , get, set -> property
+# 중복코드 제거 , get, set -> property -> decorator
+#__hiddenfield
 class Pokemon:
     def __init__(self, owner, skills):
-        self.hidden_owner = owner
+        self.__hidden_owner = owner #like private
         self.owner = owner
         self.skills = skills.split('/')
         print(f"포켓몬 생성 :", end=' ')
+
+    @property
+    def owner(self):
+        return self.__hidden_owner
+    @owner.setter
+    def owner(self,owner):
+        self.__hidden_owner = owner
 
     def get_owner(self):
         return self.hidden_owner
     def get_setter(self,owner):
         self.hidden_owner = owner
 
-    owner = property(get_owner,get_setter)
+    # owner = property(get_owner,get_setter)
 
 
     def info(self):
@@ -67,10 +75,13 @@ while True:
         break
     elif menu == '1':
         pokemon = input('1) 피카츄  2) 꼬부기  3) 파이리 : ')
+        n = input('플레이어 이름 입력 : ')
+        s = input('사용 가능한 기술 입력(/로 구분하여 입력) :')
+
         if pokemon == '1':
-            n = input('플레이어 이름 입력 : ')
-            s = input('사용 가능한 기술 입력(/로 구분하여 입력) :')
             p = Pikachu(n, s)
+            #p.owner = "한지우" # setter
+            # p.__hidden_owner = "한지우" # 허가되지 않는 접근.
         elif pokemon == '2':
             n = input('플레이어 이름 입력 : ')
             s = input('사용 가능한 기술 입력(/로 구분하여 입력) :')

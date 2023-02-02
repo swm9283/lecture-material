@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fb36737-1e3e-4010-83e3-4056b8faa7e7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="4fb36737-1e3e-4010-83e3-4056b8faa7e7" name="Changes" comment="day14 class 09 pokemon game v0.3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dat01_02_countdown.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/day01_01_temperature.py" beforeDir="false" afterPath="$PROJECT_DIR$/day01_01_temperature.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day01_03_dictionary.py" beforeDir="false" afterPath="$PROJECT_DIR$/day01_03_dictionary.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day02.py" beforeDir="false" afterPath="$PROJECT_DIR$/day02.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day03.py" beforeDir="false" afterPath="$PROJECT_DIR$/day03.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day14.py" beforeDir="false" afterPath="$PROJECT_DIR$/day14.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mission" beforeDir="false" afterPath="$PROJECT_DIR$/mission" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mission/day03_mission.py" beforeDir="false" afterPath="$PROJECT_DIR$/mission/day03_mission.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,6 +24,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -61,6 +58,29 @@
       <option name="presentableId" value="Default" />
       <updated>1673486381741</updated>
     </task>
+    <task id="LOCAL-00001" summary="day14 class 09 pokemon game v0.3">
+      <created>1675318136405</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1675318136405</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="day14 class 09 pokemon game v0.3" />
+    <option name="LAST_COMMIT_MESSAGE" value="day14 class 09 pokemon game v0.3" />
   </component>
 </project>
