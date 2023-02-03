@@ -1,41 +1,24 @@
-#특수 다항식 처리 프로그램
+best_friends= [("다현",200),("정연",100),("쯔위",90),("사나",30),("지효",15)]
 
-## 함수 선언 부분 ##
-def print_poly(t_x, p_x):
-    poly_str = "P(x) = "
+#위치를 찾아야돼.
 
-    for i in range(len(p_x)):
-        term = t_x[i]  # 항 차수
-        coef = p_x[i]  # 계수
-
-        if (coef >= 0):
-            poly_str += "+"
-        poly_str += str(coef) + "x^" + str(term) + " "
-
-    return poly_str
-
-
-def calc_poly(x_val, t_x, p_x):
-    ret_value = 0
-
-    for i in range(len(px)):
-        term = t_x[i]  # 항 차수
-        coef = p_x[i]  # 계수
-        ret_value += coef * x_val ** term
-
-    return ret_value
+def add_friends(data):
+    len_best_friends = len(best_friends)
+    best_friends.append(None)
+    for i in range(len_best_friends-1,-1,-1):
+        if data[1] >= best_friends[i][1]:
+            best_friends[i+1] = best_friends[i]
+            best_friends[i] = data
+    print(best_friends)
+def question():
+    name = input("추가할 친구를 입력하세요 :")
+    number = int(input("횟수를 입력하세요 : "))
+    data = (name,number)
+    return data
+add_friends(question())
 
 
-## 전역 변수 선언 부분 ##
-tx = [300, 20, 0]
-px = [7, -4, 5]
 
-## 메인 코드 부분 ##
-if __name__ == "__main__":
-    pStr = print_poly(tx, px)
-    print(pStr)
 
-    xValue = int(input("X 값-->"))
 
-    pxValue = calc_poly(xValue, tx, px)
-    print(pxValue)
+
