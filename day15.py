@@ -1,90 +1,41 @@
-#다항식의 선형 리스트 표현.
+#특수 다항식 처리 프로그램
 
 ## 함수 선언 부분 ##
-def print_poly(px):
-    """
-    다항식 표현
-    :param px: 계수를 가지고 있는 리스트
-    :return:
-    """
-    term = len(px) - 1  # 최고차항 숫자 = 배열길이-1
+def print_poly(t_x, p_x):
     poly_str = "P(x) = "
 
-    for i in range(len(px)):
-        coef = px[i]  # 계수
-        if term == len(px) - 1:
-            if coef == 0:
-                term = term - 1
-                continue
-            elif coef > 0:
-                poly_str = poly_str + f"{coef}x^{term}"
-                term = term - 1
+    for i in range(len(p_x)):
+        term = t_x[i]  # 항 차수
+        coef = p_x[i]  # 계수
 
-            else:
-                poly_str = poly_str + f"{coef}x^{term}"
-                term = term - 1
-        elif(term == 0):
-            if coef == 0:
-                break
-            elif coef > 0:
-                poly_str = poly_str + "+" + f"{coef}"
-            else:
-                poly_str = poly_str + f"{coef}"
-        else:
-            if coef == 0:
-                term = term - 1
-                continue
-            elif coef > 0:
-                poly_str = poly_str + "+" + f"{coef}x^{term}"
-                term = term - 1
-
-            else:
-                poly_str = poly_str + f"{coef}x^{term}"
-                term = term - 1
-
-        # if coef == 0:
-        #     term = term -1
-        #     continue
-        # elif coef > 0:
-        #     poly_str = poly_str + "+" + f"{coef}x^{term}"
-        #     term = term - 1
-        #
-        # else:
-        #     poly_str = poly_str + f"{coef}x^{term}"
-        #     term = term - 1
+        if (coef >= 0):
+            poly_str += "+"
+        poly_str += str(coef) + "x^" + str(term) + " "
 
     return poly_str
 
 
-def clac_poly(xvalue, p_x):
-    """
-    다항식 계산
-    :param xvalue: 다항식에 대입할 x 값
-    :param p_x: 다항식의 계수
-    :return: 다항식의 결과값.
-    """
+def calc_poly(x_val, t_x, p_x):
     ret_value = 0
-    term = len(p_x) - 1  # 최고차항 숫자 = 배열길이-1
 
     for i in range(len(px)):
+        term = t_x[i]  # 항 차수
         coef = p_x[i]  # 계수
-        ret_value += coef * xvalue ** term
-        term = term - 1
+        ret_value += coef * x_val ** term
 
     return ret_value
 
 
 ## 전역 변수 선언 부분 ##
-px = [7, -0, 0, 5]
+tx = [300, 20, 0]
+px = [7, -4, 5]
 
 ## 메인 코드 부분 ##
 if __name__ == "__main__":
-    pstr = print_poly(px)
-    print(pstr)
+    pStr = print_poly(tx, px)
+    print(pStr)
 
-    x_value = int(input("X 값-->"))
+    xValue = int(input("X 값-->"))
 
-    px_value = clac_poly(x_value, px)
-    print(px_value)
-
-
+    pxValue = calc_poly(xValue, tx, px)
+    print(pxValue)
