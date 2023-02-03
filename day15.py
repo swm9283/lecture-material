@@ -28,16 +28,39 @@ def delete_data(position):
 
     del (pokemons[len_pokemons - 1])
 
+def delete_data_all(position):
+    if position < 0 or position > len(pokemons):
+        print("데이터를 삭제할 범위를 벗어났습니다.")
+        return
+
+    len_pokemons = len(pokemons)
+
+    for i in range(position, len_pokemons -1):
+        pokemons[i] = None
+
+    for i in range(len_pokemons -1, position -1 , -1):
+        pokemons.pop()
+
+
+
+
+
+
+
+
+
 
 if __name__ == "__main__": # main 함수?
     pokemons = ["피카츄", "라이츄", "꼬부기", "파이리", "이상해"]
-    print(pokemons)
-    insert_data(2, '거북왕')
-    # pokemons.insert(2,"거북왕")  built-in 코드
-    print(pokemons)
-    insert_data(6, '망나뇽')
-    # pokemons.insert(6,"망나뇽")  built-in 코드
-    print(pokemons)
-
-    delete_data(1)
+    # print(pokemons)
+    # insert_data(2, '거북왕')
+    # # pokemons.insert(2,"거북왕")  built-in 코드
+    # print(pokemons)
+    # insert_data(6, '망나뇽')
+    # # pokemons.insert(6,"망나뇽")  built-in 코드
+    # print(pokemons)
+    #
+    # delete_data(1)
+    # print(pokemons)
+    delete_data_all(2)
     print(pokemons)
