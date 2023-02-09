@@ -1,3 +1,6 @@
+import tkinter as tk
+
+
 def fibo_recu(n):
     """
     재귀함수를 사용한 피보나치 수열 처리
@@ -36,8 +39,8 @@ def fibo_memo_recu(n):
     :param n:
     :return:
     """
-    global memos, count_memo_recursion
-    count_memo_recursion = count_memo_recursion + 1
+    # global memos, count_memo_recursion
+    # count_memo_recursion = count_memo_recursion + 1
     if n <= 1:
         return memos[n]
 
@@ -65,24 +68,41 @@ def fibo_memo(n):
         return memo[n]
 
 
-count_memoization = 0
-count_recursion = 0
-count_memo_recursion = 0
-
-for i in range(2, 30):
-    print(f" {i} : {fibo_memo(i)}")  ## memoization
-print("####################")
-print("피보나치 수 --> 0 1 ")
-# for i in range(2, 40):
-#     print(f" {i} : {fibo_iteration(i)}") ## iteration
-print("####################")
-print("피보나치 수 --> 0 1 ")
-for i in range(2, 30):
-    print(f" {i} : {fibo_recu(i)}")  # recursion 역시 재귀는 오버헤드 때문에 느리네
+def fact_recu(n):
+    if n == 1:
+        return 1
+    else:
+        return n * fact_recu(n - 1)
 
 
-for i in range(2, 30):
-    print(f" {i} : {fibo_memo_recu(i)}")  ## memoization
+print(fact_recu(5))
 
 
-print(f"재귀 : {count_recursion} 메모: {count_memoization} 재귀 메모: {count_memo_recursion}")
+# print(fact_recu(5))
+
+
+def factorial_input():
+    lbl_results.config(text=f"계산기 출력 결과 : {fact_recu(int(en_num_input.get()))}")
+
+
+def fibonacci_input():
+    lbl_results.config(text=f"계산기 출력 결과 : {fibo_memo_recu(int(en_num_input.get()))}")
+
+
+win = tk.Tk()  # 윈도우 생성
+win.title("Calculater")  # 피보나치, 팩토리얼 계산기
+win.geometry("250x100")
+
+en_num_input = tk.Entry()  # 텍스트 입력 상자
+lbl_results = tk.Label(text="계산기 출력 결과 :")  # 레이블 , 계산 결과 출력용
+btn_fact = tk.Button(text="팩토리얼", command=factorial_input)  # 레이블,
+btn_fibo = tk.Button(text="피보나치", command=fibonacci_input)  # 레이블 피보나치 계산
+
+
+# 레이아웃 (grid or place 사용가능)
+en_num_input.pack()
+lbl_results.pack()
+btn_fact.pack(fill="x")
+btn_fibo.pack(fill="x")
+
+win.mainloop()
