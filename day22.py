@@ -4,8 +4,8 @@ import socket
 print("에코 클라이언트 시작됨!")
 # client socket 생성.
 client_socket = socket.socket(
-    socket.AF_INET, socket.SOCK_STREAM
-)  # datagram으로 만들 떄는 socket.SOCK_Datagram 사용하면 된다.
+    socket.AF_INET, socket.SOCK_STREAM  # TCP
+)  # datagram으로 만들 떄는 socket.SOCK_Datagram 사용하면 된다. (UDP)
 # connect
 client_socket.connect(("165.246.115.165", 20000))
 print("서버에 연결됨.")
